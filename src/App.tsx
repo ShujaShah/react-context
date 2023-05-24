@@ -6,22 +6,22 @@ import NavBar from "./state-management/NavBar";
 import TasksContext from "./state-management/contexts/tasksContext";
 import loginReducer from "./state-management/reducers/loginReducer";
 import AuthContext from "./state-management/contexts/authContext";
+import AuthProvider from "./state-management/AuthProvider";
+import TaskProvider from "./state-management/TaskProvider";
 
 function App() {
-  const [tasks, tasksDispatch] = useReducer(tasksReducer, []);
-  const [user, authDispatch] = useReducer(loginReducer, "");
   return (
     <>
       {/* <Counter/>
     <LoginStatus/>
     <TaskList/> 
     */}
-      <AuthContext.Provider value={{ user, dispatch: authDispatch }}>
-        <TasksContext.Provider value={{ tasks, dispatch: tasksDispatch }}>
+      <AuthProvider>
+        <TaskProvider>
           <NavBar />
           <TaskList />
-        </TasksContext.Provider>
-      </AuthContext.Provider>
+        </TaskProvider>
+      </AuthProvider>
     </>
   );
 }
