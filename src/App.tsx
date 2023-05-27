@@ -8,6 +8,7 @@ import loginReducer from "./state-management/auth/loginReducer";
 import AuthContext from "./state-management/auth/authContext";
 import AuthProvider from "./state-management/auth/AuthProvider";
 import TaskProvider from "./state-management/tasks/TaskProvider";
+import Counter from "./state-management/counter/Counter";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
     <LoginStatus/>
     <TaskList/> 
     */}
+    <Counter/>
       <AuthProvider>
         <TaskProvider>
           <NavBar />
